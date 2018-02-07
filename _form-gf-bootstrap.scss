@@ -1,0 +1,28 @@
+//
+// Form styles to use Gravity Forms with Bootstrap
+//
+// Requirements:
+// - Disabled Gravity Forms styles
+// - Bootstrap mixins included before gf-bootstrap
+// - Bootstrap version: 4 alpha 6
+//
+// Todo:
+// - Test with more validation states
+// - Upgrade to Bootstrap 4 final release
+//
+// @version: 0.1
+// @date: 07-02-2018
+// @author: Rutger Laurman - lekkerduidelijk.nl
+//
+
+// Normalize default HTML output
+@import "reset";
+
+// Date picker is 100% copy of default Gravity Forms styles
+@import "datepicker";
+
+// Bootstrap styles extends
+@import "bootstrap";
+
+// Overrides
+@import "custom";

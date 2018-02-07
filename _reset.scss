@@ -1,0 +1,19 @@
+// This file includes all Gravity Forms resets
+
+.gform_wrapper {
+  .gform_fields {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Reset default select styles
+  // [!] Make sure to add an arrow icon for MacOS Chrome
+  select {
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+  }
+}

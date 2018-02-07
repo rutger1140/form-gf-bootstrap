@@ -1,0 +1,21 @@
+// Custom overrides
+
+.gform_wrapper {
+
+  // Add dropdown icon to select
+  select {
+    &:not([multiple]) {
+      background-image: url('../images/dropdown.svg') !important;
+      background-repeat: no-repeat !important;
+      background-position: calc(100% - 10px) center !important;
+
+      // Make room for dropdown icon
+      padding-right: 30px !important;
+    }
+  }
+
+  // I like my labels bold
+  .gfield_label {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,263 @@
+// This file includes Bootstrap class elements
+
+.gform_wrapper {
+
+  // ===========================================================================
+  // Form groups
+  // ===========================================================================
+  .gfield {
+    @extend .form-group;
+
+    // Error state of field group
+    &_error {
+      @extend .has-danger;
+
+      .gfield_label {
+        color: $brand-danger;
+      }
+    }
+  }
+
+  // ===========================================================================
+  // Form fields
+  // ===========================================================================
+
+  //
+  // Default text fields
+  // ===========================================================================
+  .ginput_container_text,
+  .ginput_container_email,
+  .ginput_container_phone,
+  .ginput_container_date,
+  .ginput_container_number,
+  .ginput_container_name,
+  .ginput_container_website,
+  .ginput_container_time,
+  .ginput_container_address {
+    input {
+      @extend .form-control;
+    }
+  }
+
+  // Date picker field
+  .ginput_container_date {
+    position: relative;
+
+    .ui-datepicker-trigger {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+  }
+
+  //
+  // Select fields
+  // ===========================================================================
+
+  // Default select
+  .ginput_container_select {
+    select {
+      @extend .form-control;
+
+      &:not([size]):not([multiple]) {
+        @extend select.form-control:not([size]):not([multiple]);
+      }
+    }
+  }
+
+  // Multi select field
+  .ginput_container_multiselect {
+    select {
+      @extend .form-control;
+    }
+  }
+
+  //
+  // Text area field
+  // ===========================================================================
+  .ginput_container_textarea {
+    textarea {
+      @extend .form-control;
+    }
+  }
+
+  //
+  // Checkbox field
+  // ===========================================================================
+
+  .ginput_container_checkbox {  }
+
+  .gfield_checkbox {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @extend .form-check;
+
+    li {
+      @extend .form-check-label;
+
+      input {
+        @extend .form-check-input;
+      }
+    }
+  }
+
+  //
+  // Radio field
+  // ===========================================================================
+
+  .ginput_container_radio { }
+
+  .gfield_radio {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @extend .form-check;
+
+    li {
+      @extend .form-check-label;
+
+      input {
+        @extend .form-check-input;
+      }
+    }
+  }
+
+  //
+  // Time
+  // ===========================================================================
+
+  // .clear-multi is used to wrap container_time
+  // we need it to be a display:flex here
+  // @TODO: See if this is used somewhere else
+  .clear-multi {
+    @include make-row;
+
+    .ginput_container_time {
+      @include make-col-ready;
+
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+  }
+
+  .ginput_container_time {
+    select {
+      @extend .form-control;
+    }
+
+    label {
+      @extend .form-text;
+      display: block;
+      font-size: 80%;
+    }
+
+    &.gfield_time_hour {
+
+      // Hide <i>:</i>
+      i {
+        display: none;
+      }
+    }
+  }
+
+  //
+  // Input list fields
+  // ===========================================================================
+
+  .ginput_container_list {
+
+    .gfield_list_group {
+      @extend .form-check;
+
+      input {
+        @extend .form-control;
+      }
+    }
+  }
+
+
+  //
+  // Complex input types like name
+  // ===========================================================================
+
+  .ginput_complex {
+
+    // Name field (2 to 5 possible fields)
+    &.gf_name_has_2,
+    &.gf_name_has_3,
+    &.gf_name_has_4,
+    &.gf_name_has_5 {
+      @include make-row;
+
+      // Auto flow columns
+      span {
+        @include make-col-ready;
+        @include make-col(6);
+
+        @include media-breakpoint-up(md) {
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+        }
+      }
+    }
+
+    // Name prefix select styles
+    .name_prefix_select {
+      select {
+        @extend .form-control;
+      }
+    }
+
+    // Labels inside complex input containers are smaller
+    // Slightly opinionated
+    label {
+      @extend .form-text;
+
+      font-size: 80%;
+    }
+  }
+
+
+  //
+  // Address
+  // ===========================================================================
+
+  .ginput_container_address {
+    @include make-row;
+
+    .ginput_full {
+      @include make-col-ready;
+      @include make-col(12);
+    }
+
+    .ginput_left,
+    .ginput_right {
+      @include make-col-ready;
+      @include make-col(6);
+    }
+
+    select {
+      @extend .form-control;
+    }
+  }
+
+  //
+  // Validation
+  // ===========================================================================
+
+  // Validation message - required fields
+  .validation_message {
+    @extend .form-control-feedback;
+  }
+
+  // Show general validation error message?
+  .validation_error {
+    display: none;
+  }
+
+}
