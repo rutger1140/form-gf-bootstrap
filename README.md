@@ -3,7 +3,6 @@
 ## Requirements
 * Disabled Gravity Forms styles
 * Bootstrap mixins included before `form-gf-bootstrap.scss`
-* Bootstrap version: 4 alpha 6
 
 ## Todo
 - [ ] Test with more validation states
@@ -13,3 +12,4 @@
 *Tested with*
 - WordPress: 4.9.2
 - Gravity Forms: 2.2.5
+- Bootstrap: 4 alpha 6
