@@ -16,13 +16,13 @@
 //
 
 // Normalize default HTML output
-@import "reset";
+@import 'reset';
 
 // Date picker is 100% copy of default Gravity Forms styles
-@import "datepicker";
+// @import "datepicker";
 
 // Bootstrap styles extends
-@import "bootstrap";
+@import 'bootstrap';
 
 // Overrides
-@import "custom";
+@import 'custom';

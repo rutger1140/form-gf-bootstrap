@@ -1,7 +1,6 @@
 // This file includes Bootstrap class elements
 
 .gform_wrapper {
-
   // ===========================================================================
   // Form groups
   // ===========================================================================
@@ -10,10 +9,23 @@
 
     // Error state of field group
     &_error {
-      @extend .has-danger;
+      // Add validation message to inputs
+      .ginput_container_text,
+      .ginput_container_email,
+      .ginput_container_phone,
+      .ginput_container_date,
+      .ginput_container_number,
+      .ginput_container_name,
+      .ginput_container_website,
+      .ginput_container_time,
+      .ginput_container_address {
+        input {
+          @extend .is-invalid;
+        }
+      }
 
       .gfield_label {
-        color: $brand-danger;
+        color: theme-color('danger');
       }
     }
   }
@@ -85,7 +97,9 @@
   // Checkbox field
   // ===========================================================================
 
-  .ginput_container_checkbox {  }
+  .ginput_container_checkbox {
+    // empty
+  }
 
   .gfield_checkbox {
     list-style: none;
@@ -107,7 +121,9 @@
   // Radio field
   // ===========================================================================
 
-  .ginput_container_radio { }
+  .ginput_container_radio {
+    // empty
+  }
 
   .gfield_radio {
     list-style: none;
@@ -151,12 +167,12 @@
 
     label {
       @extend .form-text;
+
       display: block;
       font-size: 80%;
     }
 
     &.gfield_time_hour {
-
       // Hide <i>:</i>
       i {
         display: none;
@@ -169,7 +185,6 @@
   // ===========================================================================
 
   .ginput_container_list {
-
     .gfield_list_group {
       @extend .form-check;
 
@@ -179,13 +194,11 @@
     }
   }
 
-
   //
   // Complex input types like name
   // ===========================================================================
 
   .ginput_complex {
-
     // Name field (2 to 5 possible fields)
     &.gf_name_has_2,
     &.gf_name_has_3,
@@ -222,7 +235,6 @@
     }
   }
 
-
   //
   // Address
   // ===========================================================================
@@ -251,7 +263,7 @@
   // ===========================================================================
 
   .ginput_container_fileupload {
-    input[type=file] {
+    input[type='file'] {
       @extend .form-control-file;
     }
   }
@@ -262,12 +274,11 @@
 
   // Validation message - required fields
   .validation_message {
-    @extend .form-control-feedback;
+    @extend .invalid-feedback;
   }
 
   // Show general validation error message?
   .validation_error {
     display: none;
   }
-
 }

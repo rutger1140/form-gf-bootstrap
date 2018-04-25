@@ -1,11 +1,10 @@
 // Custom overrides
 
 .gform_wrapper {
-
   // Add dropdown icon to select
   select {
     &:not([multiple]) {
-      background-image: url('../images/dropdown.svg') !important;
+      // background-image: url('../images/dropdown.svg') !important;
       background-repeat: no-repeat !important;
       background-position: calc(100% - 10px) center !important;
 
