@@ -2,35 +2,6 @@
 
 .gform_wrapper {
   // ===========================================================================
-  // Form groups
-  // ===========================================================================
-  .gfield {
-    @extend .form-group;
-
-    // Error state of field group
-    &_error {
-      // Add validation message to inputs
-      .ginput_container_text,
-      .ginput_container_email,
-      .ginput_container_phone,
-      .ginput_container_date,
-      .ginput_container_number,
-      .ginput_container_name,
-      .ginput_container_website,
-      .ginput_container_time,
-      .ginput_container_address {
-        input {
-          @extend .is-invalid;
-        }
-      }
-
-      .gfield_label {
-        color: theme-color('danger');
-      }
-    }
-  }
-
-  // ===========================================================================
   // Form fields
   // ===========================================================================
 
@@ -70,10 +41,6 @@
   .ginput_container_select {
     select {
       @extend .form-control;
-
-      &:not([size]):not([multiple]) {
-        @extend select.form-control:not([size]):not([multiple]);
-      }
     }
   }
 
@@ -145,21 +112,6 @@
   // Time
   // ===========================================================================
 
-  // .clear-multi is used to wrap container_time
-  // we need it to be a display:flex here
-  // @TODO: See if this is used somewhere else
-  .clear-multi {
-    @include make-row;
-
-    .ginput_container_time {
-      @include make-col-ready;
-
-      flex-basis: 0;
-      flex-grow: 1;
-      max-width: 100%;
-    }
-  }
-
   .ginput_container_time {
     select {
       @extend .form-control;
@@ -180,6 +132,21 @@
     }
   }
 
+  // .clear-multi is used to wrap container_time
+  // we need it to be a display:flex here
+  // @TODO: See if this is used somewhere else
+  .clear-multi {
+    @include make-row;
+
+    .ginput_container_time {
+      @include make-col-ready;
+
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+  }
+
   //
   // Input list fields
   // ===========================================================================
@@ -191,6 +158,29 @@
       input {
         @extend .form-control;
       }
+    }
+  }
+
+  //
+  // Address
+  // ===========================================================================
+
+  .ginput_container_address {
+    @include make-row;
+
+    .ginput_full {
+      @include make-col-ready;
+      @include make-col(12);
+    }
+
+    .ginput_left,
+    .ginput_right {
+      @include make-col-ready;
+      @include make-col(6);
+    }
+
+    select {
+      @extend .form-control;
     }
   }
 
@@ -236,29 +226,6 @@
   }
 
   //
-  // Address
-  // ===========================================================================
-
-  .ginput_container_address {
-    @include make-row;
-
-    .ginput_full {
-      @include make-col-ready;
-      @include make-col(12);
-    }
-
-    .ginput_left,
-    .ginput_right {
-      @include make-col-ready;
-      @include make-col(6);
-    }
-
-    select {
-      @extend .form-control;
-    }
-  }
-
-  //
   // File upload
   // ===========================================================================
 
@@ -280,5 +247,34 @@
   // Show general validation error message?
   .validation_error {
     display: none;
+  }
+
+  // ===========================================================================
+  // Form groups
+  // ===========================================================================
+  .gfield {
+    @extend .form-group;
+
+    // Error state of field group
+    &_error {
+      // Add validation message to inputs
+      .ginput_container_text,
+      .ginput_container_email,
+      .ginput_container_phone,
+      .ginput_container_date,
+      .ginput_container_number,
+      .ginput_container_name,
+      .ginput_container_website,
+      .ginput_container_time,
+      .ginput_container_address {
+        input {
+          @extend .is-invalid;
+        }
+      }
+
+      .gfield_label {
+        color: theme-color('danger');
+      }
+    }
   }
 }
