@@ -272,6 +272,12 @@
         }
       }
 
+      .ginput_container_textarea {
+        textarea {
+          @extend .is-invalid;
+        }
+      }
+
       .gfield_label {
         color: theme-color('danger');
       }
