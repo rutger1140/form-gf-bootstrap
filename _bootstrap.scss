@@ -84,14 +84,16 @@
     margin: 0;
     padding: 0;
 
-    @extend .form-check;
-
     li {
-      @extend .form-check-label;
+      @extend .form-check;
+    }
 
-      input {
-        @extend .form-check-input;
-      }
+    label {
+      @extend .form-check-label;
+    }
+
+    input {
+      @extend .form-check-input;
     }
   }
 
@@ -106,16 +108,18 @@
   .gfield_radio {
     list-style: none;
     margin: 0;
-    padding: 0;
-
-    @extend .form-check;
+    padding-left: 0;
 
     li {
-      @extend .form-check-label;
+      @extend .form-check;
+    }
 
-      input {
-        @extend .form-check-input;
-      }
+    label {
+      @extend .form-check-label;
+    }
+
+    input {
+      @extend .form-check-input;
     }
   }
 
